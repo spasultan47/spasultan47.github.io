@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spa Sultan - Home</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0e0e0e;
+      color: #f5f5f5;
+    }
+
+    :root {
+      --gold: #d4af37;
+      --dark: #0e0e0e;
+      --dark2: #1a1a1a;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* height: 20px; */
+    z-index: 1000;
+    transition: background 0.4s, box-shadow 0.4s;
+  }
+
+  nav.transparent {
+    background: transparent;
+  }
+
+  nav.scrolled {
+    background: rgba(14,14,14,0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    border-bottom: 1px solid rgba(212,175,55,0.2);
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+  }
+
+  .logo img {
+      width: 150px;
+      margin-bottom: -50px;
+  }
+
+  /* Menu kiri & kanan */
+  .nav-left, .nav-right {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-left li a, .nav-right li a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  .nav-left li a:hover, .nav-right li a:hover {
+    color: var(--gold);
+  }
+  @media (max-width: 768px) {
+  .nav-left, .nav-right {
+    display: none;
+  }
+  .logo {
+    text-align: left;
+    font-size: 1.4rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+  /* Logo */
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-align: center;
+  }
+
+  /* Hamburger */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .bar {
+    width: 25px;
+    height: 3px;
+    background: var(--gold);
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+
+  /* Menu Mobile */
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    padding: 15px;
+  }
+  .nav-mobile li {
+    margin: 10px 0;
+    list-style: none;
+  }
+  .nav-mobile li a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .nav-mobile li a:hover {
+    color: var(--gold);
+  }
+  .nav-mobile.show {
+    display: flex;
+  }
+/* ------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* intro */
+.about-intro {
+  position: relative;
+  height: 80vh;
+  background: url('img/bg-hero-about.png') 
+              no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.about-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6); /* overlay transparan */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.about-intro h1 {
+  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+}
+.about-intro h1 span {
+  color: var(--gold);
+}
+.about-quote {
+  font-style: italic;
+  margin-top: 20px;
+  color: #eee;
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Story */
+.about-story {
+  background: var(--dark2);
+  padding: 100px 20px;
+  color: #fff;
+}
+
+.story-flex {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.story-img img {
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(212,175,55,0.4); /* shadow emas */
+  width: 100%;
+  max-width: 500px;
+  object-fit: cover;
+}
+
+.story-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.story-text h2 {
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.story-text p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #ddd;
+  font-size: 1.05rem;
+}
+
+/* Strengths */
+.about-strengths {
+  background: #111;
+  padding: 100px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.strength-card {
+  background: var(--dark2);
+  padding: 40px 25px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(212,175,55,0.3); /* garis emas tipis */
+}
+
+.strength-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(212,175,55,0.5);
+}
+
+.strength-card i {
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.strength-card h3 {
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.strength-card p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Facts */
+.about-testimonials {
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+  padding: 100px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.testi-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 60px;
+}
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.testi-card {
+  background: var(--dark2);
+  border-radius: 20px;
+  padding: 40px 25px;
+  border: 1px solid rgba(212,175,55,0.3);
+  box-shadow: 0 0 15px rgba(212,175,55,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testi-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(212,175,55,0.4);
+}
+
+.testi-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid var(--gold);
+}
+
+.testi-card h3 {
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin-bottom: 5px;
+  font-family: 'Playfair Display', serif;
+}
+
+.stars {
+  color: var(--gold);
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.quote {
+  font-style: italic;
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.7;
+}
+
+/* CTA */
+.about-cta {
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+  padding: 120px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.about-cta::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at center, rgba(212,175,55,0.15), transparent 70%);
+  z-index: 0;
+}
+
+.cta-container {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: auto;
+  color: #fff;
+}
+
+.about-cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.about-cta p {
+  font-size: 1.2rem;
+  color: #ddd;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+.about-cta .brand {
+  color: var(--gold);
+  font-weight: bold;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold);
+  color: #111;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(212,175,55,0.4);
+}
+
+.cta-btn i {
+  font-size: 1.4rem;
+}
+
+.cta-btn:hover {
+  background: #fff;
+  color: var(--gold);
+  box-shadow: 0 0 30px rgba(212,175,55,0.7);
+}
+
+/* General */
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+
+  /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+    /* Footer */
+    .footer {
+    background: var(--dark2);
+    color: #fff;
+    padding-top: 60px;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 0 20px 60px 20px;
+  }
+
+  .footer-logo {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+  }
+
+  .footer-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ddd;
+  }
+
+  .footer-title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--gold);
+    position: relative;
+  }
+
+  .footer-title::after {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    display: block;
+    margin-top: 8px;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links li {
+    margin: 10px 0;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--gold);
+  }
+
+  .footer-col p {
+    margin: 8px 0;
+    color: #ccc;
+  }
+
+  .footer-social a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    color: #ccc;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .footer-social a:hover {
+    color: var(--gold);
+    transform: scale(1.2);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(212,175,55,0.3);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #bbb;
+  }
+
+  /* Responsif */
+  @media (max-width: 900px) {
+    .footer-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+      }
+
+    .footer-social {
+      margin-top: 15px;
+      
+    }
+  }
+  </style>
+</head>
+<body>
+  <!-- ====== NAVBAR ====== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <!-- Menu kiri -->
+      <ul class="nav-left">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+  
+      <!-- Logo -->
+      <div class="logo">
+        <img src="img/logoSS.png" alt="logo">
+      </div>
+  
+      <!-- Menu kanan -->
+      <ul class="nav-right">
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+  
+      <!-- Hamburger (mobile) -->
+      <div class="menu-toggle" id="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  
+    <!-- Menu Mobile -->
+    <ul class="nav-mobile" id="nav-mobile">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ------------------------------------------------------------------------------------------------------------------------------------------------ -->
+
+
+  <!-- ===== ABOUT US ===== -->
+  <section class="about-intro">
+    <div class="about-overlay">
+      <div class="about-container">
+        <h1>Tentang <span>Spa Sultan</span></h1>
+        <p class="about-quote">“Kami percaya bahwa relaksasi adalah seni, dan setiap tamu layak diperlakukan bak seorang Sultan.”</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-story">
+    <div class="about-container story-flex">
+      <div class="story-img">
+        <img src="img/ceritaFilosofi.png" alt="Spa Sultan">
+      </div>
+      <div class="story-text">
+        <h2>Cerita & Filosofi</h2>
+        <p>
+          SULTAN SPA merupakan salah satu tempat SPA khusus Pria yang menawarkan Room Massage
+          dengan Fasilitas Jacuzzi King Size. SULTAN SPA menawarkan berapa ragam paket treatment all in
+          sehingga tubuh anda akan merasa segar dan puas setelah melakukan treatment.
+        </p>
+        <p>
+          Sebagai tempat penyedia Traditional Massage, SULTAN SPA menyediakan Fasilitas yang akan
+          membuat kesenangan, kenyamanan serta kebugaran terhadap treatment pas tinya dapat anda
+          dapatkan hanya dengan berkunjung ke SPA Massage khusus Pria yang satu ini. Anda bisa menikmati
+          Paket All in dengan dua terapis sekaligus sehingga tubuh anda akan full di Massage dan pastinya rasa
+          pegal serta penat langsung hilang sehabis treatment.
+        </p>
+        <p>
+          SULTAN SPA salah satu spa di Kota Bandung. SULTAN SPA melayani berbagai jenis-jenis treatment
+          spa seperti lulur, hair cream bath, perawatan rambut, kesegaran tubuh, massage, body treatments
+          dan lainnya. Spa ini menawarkan jasanya dengan harga dan biaya yang terjangkau dengan kualitas
+          terbaik sehingga menjadi salah satu spa terpercaya di Kota Bandung.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-strengths">
+    <div class="about-container strengths-grid">
+      <div class="strength-card">
+        <i class="fas fa-crown"></i>
+        <h3>Pelayanan Kelas Sultan</h3>
+        <p>Dari awal kedatangan, setiap tamu diperlakukan dengan penuh perhatian, layaknya seorang Sultan.</p>
+      </div>
+      <div class="strength-card">
+        <i class="fas fa-spa"></i>
+        <h3>Produk Premium</h3>
+        <p>Kami hanya menggunakan produk spa berkualitas tinggi dengan bahan alami pilihan.</p>
+      </div>
+      <div class="strength-card">
+        <i class="fas fa-user-md"></i>
+        <h3>Terapis Bersertifikat</h3>
+        <p>Tim profesional berpengalaman siap memberikan perawatan yang aman, nyaman, dan efektif.</p>
+      </div>
+      <div class="strength-card">
+        <i class="fas fa-leaf"></i>
+        <h3>Ruang Relaksasi Eksklusif</h3>
+        <p>Suasana yang dirancang untuk menenangkan pikiran, tubuh, dan jiwa secara harmonis.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-testimonials">
+    <div class="about-container">
+      <h2 class="testi-title">Apa Kata Klien Kami</h2>
+      <div class="testi-grid">
+        
+        <div class="testi-card">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client 1">
+          <h3>Sri Wulandari</h3>
+          <div class="stars">★★★★★</div>
+          <p class="quote">“Pengalaman spa di sini benar-benar mewah. Dari aroma, musik, hingga sentuhan terapis, semuanya terasa istimewa.”</p>
+        </div>
+  
+        <div class="testi-card">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client 2">
+          <h3>Andi Pratama</h3>
+          <div class="stars">★★★★★</div>
+          <p class="quote">“Spa Sultan adalah tempat terbaik untuk melepas penat. Rasa lelah langsung hilang, diganti dengan ketenangan.”</p>
+        </div>
+  
+        <div class="testi-card">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client 3">
+          <h3>Clara Natalia</h3>
+          <div class="stars">★★★★★</div>
+          <p class="quote">“Nuansanya sangat elegan, pelayanannya personal dan penuh perhatian. Saya pasti akan kembali lagi.”</p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <section class="about-cta">
+    <div class="cta-container">
+      <h2>Siap Merasakan Pengalaman Spa Sekelas Sultan?</h2>
+      <p>Nikmati kemewahan, ketenangan, dan pelayanan personal hanya di <span class="brand">Spa Sultan</span>.</p>
+      <a href="https://wa.me/6281234567890" target="_blank" class="cta-btn">
+        <i class="fab fa-whatsapp"></i> Reservasi via WhatsApp
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      
+      <!-- Kolom 1: Logo & Deskripsi -->
+      <div class="footer-col">
+        <h2 class="footer-logo"><img src="img/logoSS.png" alt="logo" style="width: 150px;"></h2>
+        <p class="footer-desc">
+          Pengalaman spa berkelas sultan dengan nuansa mewah, elegan, 
+          dan pelayanan profesional terbaik di kota Anda.
+        </p>
+      </div>
+  
+      <!-- Kolom 2: Navigasi -->
+      <div class="footer-col">
+        <h3 class="footer-title">Navigasi</h3>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Layanan</a></li>
+          <li><a href="#">Galeri</a></li>
+          <li><a href="#">Kontak</a></li>
+        </ul>
+      </div>
+  
+      <!-- Kolom 3: Kontak -->
+      <div class="footer-col">
+        <h3 class="footer-title">Kontak Kami</h3>
+        <p>📍 Jl. Kemewahan Raya No. 1, Jakarta</p>
+        <p>📞 +62 812 3456 7890</p>
+        <p>✉️ info@spasultan.com</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Bottom -->
+    <div class="footer-bottom">
+      <p>© 2025 Spa Sultan. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+
+  <script src="https://kit.fontawesome.com/67c3281092.js" crossorigin="anonymous"></script>
+
+
+  <!-- --------------------------------------------------------------------------------------------------------------------- -->
+  <script>
+    const navbar = document.getElementById("navbar");
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMobile = document.getElementById("nav-mobile");
+
+  // navbar transparan → berubah saat scroll
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > window.innerHeight - 80) {
+      navbar.classList.add("scrolled");
+      navbar.classList.remove("transparent");
+    } else {
+      navbar.classList.add("transparent");
+      navbar.classList.remove("scrolled");
+    }
+  });
+
+  // jalankan sekali di awal
+  window.dispatchEvent(new Event("scroll"));
+
+  // toggle menu mobile
+  menuToggle.addEventListener("click", () => {
+    navMobile.classList.toggle("show");
+  });
+  </script>
+</body>
+</html>
