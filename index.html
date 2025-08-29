@@ -70,18 +70,6 @@
   .nav-left li a:hover, .nav-right li a:hover {
     color: var(--gold);
   }
-  @media (max-width: 768px) {
-  .nav-left, .nav-right {
-    display: none;
-  }
-  .logo {
-    text-align: left;
-    font-size: 1.4rem;
-  }
-  .menu-toggle {
-    display: flex;
-  }
-}
 
   /* Logo */
   .logo {
@@ -151,6 +139,7 @@
     align-items: center;
   }
 
+
   /* Teks kiri */
   .hero-text h1 {
     font-family: 'Playfair Display', serif;
@@ -204,6 +193,23 @@
   object-fit: cover;
 }
 
+@media (max-width: 768px) {
+  .nav-left, .nav-right {
+    display: none;
+  }
+  .logo {
+    text-align: left;
+    font-size: 1.4rem;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+
+  .hero-container {
+    margin-top: 200px;
+  }
+  }
+
   /* RESPONSIVE */
   @media (max-width: 900px) {
     .hero-container {
@@ -221,8 +227,14 @@
     }
     .hero-image {
       text-align: center; /* biar nempel kanan */
+    }
+    .menu-toggle {
+      display: flex;
+    }
+    .hero-container {
+    margin-top: 200px;
+    }
   }
-}
 
     /* ===== SECTIONS ===== */
     section {
@@ -675,7 +687,7 @@
       <div class="hero-text">
         <h1>Kemewahan Relaksasi Ala Sultan</h1>
         <p>Tempat di mana keanggunan bertemu ketenangan, dengan layanan premium yang dirancang hanya untuk Anda.</p>
-        <a href="https://wa.me/6281234567890" class="btn-whatsapp" target="_blank">Reservasi via WhatsApp</a>
+        <a href="https://wa.me/6281211122689" class="btn-whatsapp" target="_blank">Reservasi via WhatsApp</a>
         
         <!-- Rating / Social Proof -->
         <div class="rating">
@@ -770,7 +782,7 @@
      
          <!-- CTA -->
          <div class="cta-choose">
-           <a href="https://wa.me/6281234567890" class="btn-gold">Nikmati Kemewahan Sekarang</a>
+           <a href="https://wa.me/6281211122689" class="btn-gold">Nikmati Kemewahan Sekarang</a>
          </div>
        </div>
      </section>
@@ -786,7 +798,7 @@
         <!-- Foto Galeri -->
         <div class="gallery-item">
           <img src="img/1.jpg" alt="Spa Sultan 1">
-          <div class="overlay">Ruang Relaksasi</div>
+          <div class="overlay">Free Drink</div>
         </div>
   
         <div class="gallery-item">
@@ -796,22 +808,22 @@
   
         <div class="gallery-item">
           <img src="img/3.jpg" alt="Spa Sultan 3">
-          <div class="overlay">Terapis Profesional</div>
+          <div class="overlay">Sultan Room</div>
         </div>
   
         <div class="gallery-item">
           <img src="img/4.jpg" alt="Spa Sultan 4">
-          <div class="overlay">Spa Couple Room</div>
+          <div class="overlay">Ruang Tunggu</div>
         </div>
   
         <div class="gallery-item">
           <img src="img/5.jpg" alt="Spa Sultan 5">
-          <div class="overlay">Aromaterapi Premium</div>
+          <div class="overlay">Jacuzzi</div>
         </div>
   
         <div class="gallery-item">
           <img src="img/6.jpg" alt="Spa Sultan 6">
-          <div class="overlay">Sentuhan Sultan</div>
+          <div class="overlay">Room Massage</div>
         </div>
       </div>
     </div>
@@ -834,20 +846,20 @@
       <div class="footer-col">
         <h3 class="footer-title">Navigasi</h3>
         <ul class="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Tentang Kami</a></li>
-          <li><a href="#">Layanan</a></li>
-          <li><a href="#">Galeri</a></li>
-          <li><a href="#">Kontak</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+          <li><a href="services.html">Layanan</a></li>
+          <li><a href="contact.html">Kontak</a></li>
         </ul>
       </div>
   
       <!-- Kolom 3: Kontak -->
       <div class="footer-col">
         <h3 class="footer-title">Kontak Kami</h3>
-        <p>📍 Jl. Kemewahan Raya No. 1, Jakarta</p>
-        <p>📞 +62 812 3456 7890</p>
-        <p>✉️ info@spasultan.com</p>
+        <p>📍 Jl. Belakang Factory No.2B, Braga, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40111,
+Indonesia</p>
+        <p>📞 081211122689</p>
+        <p>✉️ bandungsultanspa@gmail.com</p>
         <div class="footer-social">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
@@ -870,7 +882,7 @@
 
   // navbar transparan → berubah saat scroll
   window.addEventListener("scroll", () => {
-    if (window.scrollY > window.innerHeight - 80) {
+    if (window.scrollY > 80) {
       navbar.classList.add("scrolled");
       navbar.classList.remove("transparent");
     } else {
