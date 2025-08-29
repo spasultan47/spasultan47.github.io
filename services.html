@@ -129,6 +129,13 @@
   .nav-mobile.show {
     display: flex;
   }
+
+  @media (max-width: 900px) {
+    .menu-toggle {
+      display: flex;
+    }
+  }
+
 /* ------------------------------------------------------------------------------------------------------------------------------------------- */
 
 
@@ -182,7 +189,7 @@ h2 {
 
 
 /* Section 2 – Grid */
-.service-grid {
+/* .service-grid {
   background: var(--dark2);
   padding: 100px 20px;
   text-align: center;
@@ -254,7 +261,69 @@ h2 {
   color: var(--gold);
   border-top: 1px solid rgba(212,175,55,0.3);
   padding-top: 10px;
+} */
+
+/* Section 4 – Sultan Price */
+.sultan-price-section {
+  background: var(--dark2);
+  padding: 100px 20px;
+  text-align: center;
 }
+
+.price-icon {
+  font-size: 4rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.sultan-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.price-card {
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(212,175,55,0.4);
+  border-radius: 20px;
+  padding: 30px 20px;
+  color: #eee;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(212,175,55,0.5);
+}
+
+.price-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(212,175,55,0.3);
+  padding-bottom: 10px;
+}
+
+.price-card ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.price-card li {
+  margin-bottom: 10px;
+}
+
 
 
 /* Section 3 – Highlight */
@@ -595,7 +664,7 @@ h2 {
     </div>
   </section>
   
-  <section class="service-grid">
+  <!-- <section class="service-grid">
     <div class="service-container">
       <h2 class="section-title">Layanan Eksklusif Kami</h2>
       <div class="service-cards">
@@ -629,19 +698,48 @@ h2 {
         
       </div>
     </div>
-  </section>
+  </section> -->
+  <section class="sultan-price-section">
+  <div class="sultan-container">
+    <h2 class="section-title">Paket Harga Sultan</h2>
+
+    <div class="price-grid">
+
+      <!-- Emerald Package -->
+      <div class="price-card">
+        <div class="price-icon"><i class="fas fa-leaf"></i></div>
+        <h3>Price List Emerald</h3>
+        <ul>
+          <li><strong>Room VVIP</strong> – 120 Menit – Rp 1.100.000</li>
+          <li><strong>Room VIP</strong> – 120 Menit – Rp 900.000</li>
+          <li><strong>Room Deluxe</strong> – 90 Menit – Rp 700.000</li>
+        </ul>
+      </div>
+
+      <!-- Diamond Package -->
+      <div class="price-card">
+        <div class="price-icon"><i class="fas fa-gem"></i></div>
+        <h3>Price List Diamond</h3>
+        <ul>
+          <li><strong>Room VVIP</strong> – Rp 1.350.000</li>
+          <li><strong>Room VIP</strong> – Rp 1.150.000</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
   
   
   <section class="service-highlight">
     <div class="highlight-overlay">
       <div class="highlight-content">
-        <h2><span>Golden Royal Package</span></h2>
-        <p>Paket spa eksklusif berdurasi 3 jam mencakup Royal Massage, Luxury Facial, dan Body Spa Ritual. 
-        Hadirkan pengalaman relaksasi terbaik dengan suasana mewah hanya di Spa Sultan.</p>
+        <h2><span>Room Deluxe Shower</span></h2>
+        <p>Paket spa eksklusif berdurasi 90 menit. Hadirkan pengalaman relaksasi terbaik dengan suasana mewah hanya di Sultan Spa.</p>
         
-        <div class="highlight-price">Rp 5.500.000</div>
+        <div class="highlight-price">Rp 1.000.000</div>
         
-        <a href="https://wa.me/6281234567890" target="_blank" class="highlight-btn">
+        <a href="https://wa.me/6281211122689" target="_blank" class="highlight-btn">
           <i class="fab fa-whatsapp"></i> Pesan Sekarang
         </a>
       </div>
@@ -672,7 +770,7 @@ h2 {
     <div class="cta-container">
       <h2>Rasakan Sentuhan Spa Sultan</h2>
       <p>Hubungi kami sekarang dan nikmati pengalaman relaksasi tak terlupakan.</p>
-      <a href="https://wa.me/6281234567890" target="_blank" class="cta-btn">
+      <a href="https://wa.me/6281211122689" target="_blank" class="cta-btn">
         <i class="fab fa-whatsapp"></i> Reservasi via WhatsApp
       </a>
     </div>
@@ -699,20 +797,20 @@ h2 {
       <div class="footer-col">
         <h3 class="footer-title">Navigasi</h3>
         <ul class="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Tentang Kami</a></li>
-          <li><a href="#">Layanan</a></li>
-          <li><a href="#">Galeri</a></li>
-          <li><a href="#">Kontak</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+          <li><a href="services.html">Layanan</a></li>
+          <li><a href="contact.html">Kontak</a></li>
         </ul>
       </div>
   
       <!-- Kolom 3: Kontak -->
       <div class="footer-col">
         <h3 class="footer-title">Kontak Kami</h3>
-        <p>📍 Jl. Kemewahan Raya No. 1, Jakarta</p>
-        <p>📞 +62 812 3456 7890</p>
-        <p>✉️ info@spasultan.com</p>
+        <p>📍 Jl. Belakang Factory No.2B, Braga, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40111,
+Indonesia</p>
+        <p>📞 081211122689</p>
+        <p>✉️ bandungsultanspa@gmail.com</p>
         <div class="footer-social">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
@@ -740,7 +838,7 @@ h2 {
 
   // navbar transparan → berubah saat scroll
   window.addEventListener("scroll", () => {
-    if (window.scrollY > window.innerHeight - 80) {
+    if (window.scrollY > 80) {
       navbar.classList.add("scrolled");
       navbar.classList.remove("transparent");
     } else {
