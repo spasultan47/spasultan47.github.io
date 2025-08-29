@@ -130,6 +130,12 @@
   .nav-mobile.show {
     display: flex;
   }
+
+  @media (max-width: 900px) {
+    .menu-toggle {
+      display: flex;
+    }
+}
 /* ------------------------------------------------------------------------------------------------------------------------------------------- */
 
 /* intro */
@@ -563,12 +569,12 @@
 
   <!-- ===== ABOUT US ===== -->
   <section class="about-intro">
-    <div class="about-overlay">
+    <!-- <div class="about-overlay"> -->
       <div class="about-container">
         <h1>Tentang <span>Spa Sultan</span></h1>
         <p class="about-quote">“Kami percaya bahwa relaksasi adalah seni, dan setiap tamu layak diperlakukan bak seorang Sultan.”</p>
       </div>
-    </div>
+    <!-- </div> -->
   </section>
 
   <section class="about-story">
@@ -659,7 +665,7 @@
     <div class="cta-container">
       <h2>Siap Merasakan Pengalaman Spa Sekelas Sultan?</h2>
       <p>Nikmati kemewahan, ketenangan, dan pelayanan personal hanya di <span class="brand">Spa Sultan</span>.</p>
-      <a href="https://wa.me/6281234567890" target="_blank" class="cta-btn">
+      <a href="https://wa.me/6281211122689" target="_blank" class="cta-btn">
         <i class="fab fa-whatsapp"></i> Reservasi via WhatsApp
       </a>
     </div>
@@ -686,20 +692,20 @@
       <div class="footer-col">
         <h3 class="footer-title">Navigasi</h3>
         <ul class="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Tentang Kami</a></li>
-          <li><a href="#">Layanan</a></li>
-          <li><a href="#">Galeri</a></li>
-          <li><a href="#">Kontak</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+          <li><a href="services.html">Layanan</a></li>
+          <li><a href="contact.html">Kontak</a></li>
         </ul>
       </div>
   
       <!-- Kolom 3: Kontak -->
       <div class="footer-col">
         <h3 class="footer-title">Kontak Kami</h3>
-        <p>📍 Jl. Kemewahan Raya No. 1, Jakarta</p>
-        <p>📞 +62 812 3456 7890</p>
-        <p>✉️ info@spasultan.com</p>
+        <p>📍 Jl. Belakang Factory No.2B, Braga, Kec. Sumur Bandung, Kota Bandung, Jawa Barat 40111,
+Indonesia</p>
+        <p>📞 081211122689</p>
+        <p>✉️ bandungsultanspa@gmail.com</p>
         <div class="footer-social">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
@@ -727,7 +733,7 @@
 
   // navbar transparan → berubah saat scroll
   window.addEventListener("scroll", () => {
-    if (window.scrollY > window.innerHeight - 80) {
+    if (window.scrollY > 80) {
       navbar.classList.add("scrolled");
       navbar.classList.remove("transparent");
     } else {
